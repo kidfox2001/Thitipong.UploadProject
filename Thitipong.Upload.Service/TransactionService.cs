@@ -88,7 +88,7 @@ namespace Thitipong.Upload.Service
             Regex rgx1 = new Regex("\"(.*?)\"");
             return new Transaction()
             {
-                TransactionId = CleanString(rgx1.Matches(csvLine)[0].Value) + Guid.NewGuid().ToString(),
+                TransactionId = CleanString(rgx1.Matches(csvLine)[0].Value),
                 Amount = decimal.Parse(CleanString(rgx1.Matches(csvLine)[1].Value)),
                 CurrencyCode = CleanString(rgx1.Matches(csvLine)[2].Value),
                 TransactionDate = DateTime.ParseExact(CleanString(rgx1.Matches(csvLine)[3].Value),
