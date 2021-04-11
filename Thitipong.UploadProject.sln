@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thitipong.Upload.Service", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thitipong.Upload.Api", "Thitipong.Upload.Api\Thitipong.Upload.Api.csproj", "{23E45D9F-BF42-4039-A6F3-4C26BE27D9B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thitipong.Upload.Web", "Thitipong.Upload.Web\Thitipong.Upload.Web.csproj", "{214A8E5D-1F9F-4267-84A0-FF266A451DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thitipong.Upload.Web", "Thitipong.Upload.Web\Thitipong.Upload.Web.csproj", "{214A8E5D-1F9F-4267-84A0-FF266A451DC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thitipong.CallApi", "Thitipong.CallApi\Thitipong.CallApi.csproj", "{CEBEFC0F-8120-4905-BD0C-B3A764EAE537}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{214A8E5D-1F9F-4267-84A0-FF266A451DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{214A8E5D-1F9F-4267-84A0-FF266A451DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{214A8E5D-1F9F-4267-84A0-FF266A451DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBEFC0F-8120-4905-BD0C-B3A764EAE537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEBEFC0F-8120-4905-BD0C-B3A764EAE537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEBEFC0F-8120-4905-BD0C-B3A764EAE537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEBEFC0F-8120-4905-BD0C-B3A764EAE537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

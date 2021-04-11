@@ -47,12 +47,14 @@ namespace Thitipong.Upload.Web.Controllers
                     response.Wait();
 
                     var result = response.Result;
+
                     if (result.IsSuccessStatusCode)
                     {
                         ViewBag.Msg = $"Upload Success {result.StatusCode}";
                     }
                     else
                     {
+                        var responseBody = result.Content.ReadAsStringAsync().Result;
                         ViewBag.Msg = $"Upload Not Success {result.StatusCode}";
 
                     }
