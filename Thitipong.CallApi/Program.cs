@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace Thitipong.CallApi
 {
@@ -16,11 +17,60 @@ namespace Thitipong.CallApi
         {
             // ex1Async();
             //ex2Async();
-            var t1 = ex3Async();
-            t1.Wait();
-            var r1 = t1.Result;
+            //var t1 = ex3Async();
+            //t1.Wait();
+            //var r1 = t1.Result;
 
-            var d1  = DateTime.Now;
+            //var z1 =  GetUrlContentLengthAsync();
+
+            //var d1  = DateTime.Now;
+
+            Method1("xx1");
+            Method1("xx2");
+            Console.ReadKey();
+        }
+
+        public static async Task Method1(string x1)
+        {
+            await Task.Run(() =>
+            {
+                for (int i = 0; i < 25; i++)
+                {
+                    Console.WriteLine(x1);
+                    // Do something
+                    Task.Delay(100).Wait();
+                }
+            });
+        }
+
+
+        public static void Method2(string x2)
+        {
+            for (int i = 0; i < 25; i++)
+            {
+                Console.WriteLine(x2);
+                // Do something
+                Task.Delay(100).Wait();
+            }
+        }
+
+        public static async Task<int> GetUrlContentLengthAsync()
+        {
+            var client = new HttpClient();
+
+            Task<string> getStringTask =
+                client.GetStringAsync("https://docs.microsoft.com/dotnet");
+
+            DoIndependentWork();
+
+            string contents = await getStringTask;
+
+            return contents.Length;
+        }
+
+        static void DoIndependentWork()
+        {
+            Console.WriteLine("Working...");
         }
 
         public static void ex1Async()

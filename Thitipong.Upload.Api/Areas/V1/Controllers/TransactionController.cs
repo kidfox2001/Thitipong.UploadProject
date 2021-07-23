@@ -12,6 +12,7 @@ using System.IO;
 
 namespace Thitipong.Upload.Api.Areas.V1.Controllers
 {
+    //rightClickWeb.proj > Add > New Scaffolded Item... > search AREA under MVC Tab
     [Route("api/[controller]")]
     [ApiController]
     public class TransactionController : ControllerBase
@@ -51,6 +52,9 @@ namespace Thitipong.Upload.Api.Areas.V1.Controllers
 
 
         [HttpPost("upload")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
         public ActionResult Upload(IFormFile formFile)
         {
             try

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +24,6 @@
   <ItemGroup>
     <Folder Include="Areas\V1\Data\" />
     <Folder Include="Areas\V1\Views\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
 

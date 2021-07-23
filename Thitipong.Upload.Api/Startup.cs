@@ -17,6 +17,13 @@ using Thitipong.Upload.Service.Data;
 
 namespace Thitipong.Upload.Api
 {
+
+    // todo
+    // add new item > onfig
+    // set
+    // setx ASPNETCORE_ENVIRONMENT Uat
+
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
