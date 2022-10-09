@@ -8,6 +8,8 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Zort.Models;
+using Zort.Utilities;
 
 namespace Thitipong.CallApi
 {
@@ -25,8 +27,10 @@ namespace Thitipong.CallApi
 
             //var d1  = DateTime.Now;
 
-            Method1("xx1");
-            Method1("xx2");
+            //Method1("xx1");
+            //Method1("xx2");
+
+            ex11Async();
             Console.ReadKey();
         }
 
@@ -99,6 +103,46 @@ namespace Thitipong.CallApi
             //contributors.ForEach(Console.WriteLine);
 
             //record Contributor(string Login, short Contributions);
+        }
+
+        public static void ex10Async()
+        {
+            using var client = new HttpClient();
+
+            client.BaseAddress = new Uri("https://localhost:44363/api/V1/");
+            client.DefaultRequestHeaders.Add("User-Agent", "C# console program");
+            client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var url = "TopUp/1";
+            var response = client.GetAsync(url);
+            response.Wait();
+
+            var result = response.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var resp = result.Content.ReadAsStringAsync();
+            }
+
+        }
+
+        public static void ex11Async()
+        {
+            TopUpRequest data = new TopUpRequest() { amount = 999, merchantid = 9 };
+            ApiProxy client = new ApiProxy("https://localhost:44363/api/V1/");
+            var response = client.PostAsync<TopUpRequest>("TopUp", data);
+            response.Wait();
+            if (response.IsCompleted)
+            {
+
+            }
+
+            var result = response.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var resp = result.Content.ReadAsStringAsync();
+            }
+
         }
 
         private static async System.Threading.Tasks.Task ex2Async()
