@@ -8,6 +8,12 @@ namespace Thitipong.Upload.Service
 {
    public class FileService
     {
+        private readonly App app;
+
+        public FileService(App app)
+        {
+            this.app = app;
+        }
 
         public string Upload(IFormFile file)
         {
@@ -25,6 +31,9 @@ namespace Thitipong.Upload.Service
             {
                 file.CopyTo(strem);
             }
+
+            app.Transactions.ImportFile(filePath);
+
             return filePath;
         }
 

@@ -60,15 +60,16 @@ namespace Thitipong.Upload.Api.Areas.V1.Controllers
             try
             {
                 var filePath = _fileService.Upload(formFile);
-                if (Path.GetExtension(filePath).ToLower() == ".csv")
-                {
-                    _app.Transactions.ImportCsvFile(filePath);
-                }
+                //_app.Transactions.ImportFile(filePath);
+                //if (Path.GetExtension(filePath).ToLower() == ".csv")
+                //{
+                //    _app.Transactions.ImportCsvFile(filePath);
+                //}
 
-                if (Path.GetExtension(filePath).ToLower() == ".xml")
-                {
-                    _app.Transactions.ImportXmlFile(filePath);
-                }
+                //if (Path.GetExtension(filePath).ToLower() == ".xml")
+                //{
+                //    _app.Transactions.ImportXmlFile(filePath);
+                //}
 
                 return Ok();
             }
